@@ -11,7 +11,7 @@ export type SocialPlatform =
   'instagram' | 'facebook' | 'twitter' | 'linkedin' | 
   'website' | 'email' | 'github' | 'youtube' | 
   'music' | 'twitch' | 'other' | 'location' |
-  'whatsapp' | 'telegram';
+  'whatsapp' | 'telegram' | 'x';
 
 interface SocialLinkProps {
   platform: SocialPlatform;
@@ -26,14 +26,15 @@ const getIcon = (platform: SocialPlatform) => {
     case 'instagram': return <Instagram className="h-5 w-5" />;
     case 'facebook': return <Facebook className="h-5 w-5" />;
     case 'twitter': return <Twitter className="h-5 w-5" />;
+    case 'x': return <div className="text-xl font-bold">𝕏</div>;
     case 'linkedin': return <Linkedin className="h-5 w-5" />;
     case 'website': return <Globe className="h-5 w-5" />;
     case 'email': return <Mail className="h-5 w-5" />;
     case 'github': return <Github className="h-5 w-5" />;
-    case 'youtube': return <Youtube className="h-5 w-5" />;
+    case 'youtube': return <Youtube className="h-5 w-5 text-red-500" />;
     case 'music': return <Music className="h-5 w-5" />;
-    case 'twitch': return <Twitch className="h-5 w-5" />;
-    case 'location': return <Navigation className="h-5 w-5" />;
+    case 'twitch': return <Twitch className="h-5 w-5 text-purple-500" />;
+    case 'location': return <Navigation className="h-5 w-5 text-blue-500" />;
     case 'whatsapp': return <MessageSquare className="h-5 w-5 text-green-500" />;
     case 'telegram': return <Send className="h-5 w-5 text-blue-500" />;
     default: return <Link2 className="h-5 w-5" />;
@@ -45,6 +46,7 @@ const getPlatformName = (platform: SocialPlatform): string => {
     case 'instagram': return 'Instagram';
     case 'facebook': return 'Facebook';
     case 'twitter': return 'Twitter';
+    case 'x': return 'X';
     case 'linkedin': return 'LinkedIn';
     case 'website': return 'Website';
     case 'email': return 'Email';
@@ -82,11 +84,12 @@ const SocialLink: React.FC<SocialLinkProps> = ({
       case 'instagram': return 'hover:from-pink-500 hover:to-purple-500';
       case 'facebook': return 'hover:from-blue-600 hover:to-blue-700';
       case 'twitter': return 'hover:from-blue-400 hover:to-blue-500';
+      case 'x': return 'hover:from-gray-800 hover:to-gray-900';
       case 'whatsapp': return 'hover:from-green-400 hover:to-green-600';
       case 'telegram': return 'hover:from-blue-300 hover:to-blue-500';
       case 'linkedin': return 'hover:from-blue-700 hover:to-blue-800';
       case 'youtube': return 'hover:from-red-500 hover:to-red-700';
-      default: return 'hover:from-purple-400 hover:to-indigo-500';
+      default: return 'hover:from-green-500 hover:to-emerald-600';
     }
   };
 

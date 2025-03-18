@@ -15,7 +15,7 @@ const Index: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 p-4 transition-opacity duration-700 ease-in-out">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-900 dark:to-green-950 p-4 transition-opacity duration-700 ease-in-out">
       {/* خلفية محببة دقيقة */}
       <div className="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iLjAyIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-30 dark:opacity-10" />
       
@@ -26,6 +26,7 @@ const Index: React.FC = () => {
           title="مطور ومصمم مواقع"
           bio="مرحبًا! أنا مطور ومصمم مواقع إلكترونية. أساعد الشركات على بناء تواجد رقمي رائع."
           profileImage="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1000&auto=format&fit=crop"
+          videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
           socialLinks={[
             {
               platform: 'whatsapp',
@@ -43,9 +44,9 @@ const Index: React.FC = () => {
               label: '@username'
             },
             {
-              platform: 'twitter',
-              url: 'https://twitter.com/username',
-              label: '@username'
+              platform: 'x',
+              url: 'https://x.com/alihaiderdex',
+              label: '@alihaiderdex'
             },
             {
               platform: 'linkedin',
@@ -56,6 +57,11 @@ const Index: React.FC = () => {
               platform: 'website',
               url: 'https://example.com',
               label: 'الموقع الشخصي'
+            },
+            {
+              platform: 'youtube',
+              url: 'https://youtube.com/watch?v=dQw4w9WgXcQ',
+              label: 'شاهد الفيديو'
             },
             {
               platform: 'email',

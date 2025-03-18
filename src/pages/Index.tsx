@@ -30,30 +30,24 @@ const Index: React.FC = () => {
           socialLinks={[
             {
               platform: 'whatsapp',
-              url: 'https://wa.me/971501234567',
-              label: '+971 50 123 4567'
+              url: 'https://wa.me/9647746883161',
+              label: '+9647746883161'
             },
             {
               platform: 'telegram',
-              url: 'https://t.me/username',
-              label: '@username'
+              url: 'https://t.me/S5_d2',
+              label: '@S5_d2'
             },
             {
               platform: 'instagram',
-              url: 'https://instagram.com/dxet1',
-              label: '@dxet1'
+              url: 'https://instagram.com/sd.5o',
+              label: '@sd.5o'
             },
             {
-              platform: 'x',
-              url: 'https://x.com/alihaiderdex',
-              label: '@alihaiderdex'
+              platform: 'tellonym',
+              url: 'https://tellonym.me/sd.5o/risky',
+              label: '@sd.5o'
             },
-            {
-              platform: 'linkedin',
-              url: 'https://linkedin.com/in/username',
-              label: 'محمد أحمد'
-            },
-          
           ]}
         />
       </div>

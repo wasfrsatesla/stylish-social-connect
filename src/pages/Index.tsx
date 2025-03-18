@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import BioLink from '@/components/BioLink';
 
@@ -53,6 +52,10 @@ const Index: React.FC = () => {
       </div>
     </div>
   );
+};
+
+export default Index;
+
 };
 
 export default Index;

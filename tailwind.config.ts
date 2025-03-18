@@ -68,10 +68,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				bio: {
-					light: '#F5F5F7',
-					dark: '#1F1F1F',
-					accent: '#147CE5',
-					'accent-hover': '#0A66C2',
+					light: '#F5F5FE',
+					dark: '#1A1A2E',
+					accent: '#9b87f5',
+					'accent-hover': '#7E69AB',
 					muted: '#86868B'
 				}
 			},

@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { 
   Instagram, Facebook, Twitter, Linkedin, Globe, Mail, 
   Github, Youtube, Music, Twitch, ExternalLink, MapPin,
-  MessageSquare, Send
+  MessageSquare, Send, Phone, Hash, Link2, Navigation
 } from 'lucide-react';
 
 export type SocialPlatform = 
@@ -33,10 +33,10 @@ const getIcon = (platform: SocialPlatform) => {
     case 'youtube': return <Youtube className="h-5 w-5" />;
     case 'music': return <Music className="h-5 w-5" />;
     case 'twitch': return <Twitch className="h-5 w-5" />;
-    case 'location': return <MapPin className="h-5 w-5" />;
-    case 'whatsapp': return <MessageSquare className="h-5 w-5" />;
-    case 'telegram': return <Send className="h-5 w-5" />;
-    default: return <ExternalLink className="h-5 w-5" />;
+    case 'location': return <Navigation className="h-5 w-5" />;
+    case 'whatsapp': return <MessageSquare className="h-5 w-5 text-green-500" />;
+    case 'telegram': return <Send className="h-5 w-5 text-blue-500" />;
+    default: return <Link2 className="h-5 w-5" />;
   }
 };
 
@@ -76,6 +76,20 @@ const SocialLink: React.FC<SocialLinkProps> = ({
     }
   };
 
+  // Custom color classes based on platform
+  const getPlatformColorClass = () => {
+    switch (platform) {
+      case 'instagram': return 'hover:from-pink-500 hover:to-purple-500';
+      case 'facebook': return 'hover:from-blue-600 hover:to-blue-700';
+      case 'twitter': return 'hover:from-blue-400 hover:to-blue-500';
+      case 'whatsapp': return 'hover:from-green-400 hover:to-green-600';
+      case 'telegram': return 'hover:from-blue-300 hover:to-blue-500';
+      case 'linkedin': return 'hover:from-blue-700 hover:to-blue-800';
+      case 'youtube': return 'hover:from-red-500 hover:to-red-700';
+      default: return 'hover:from-purple-400 hover:to-indigo-500';
+    }
+  };
+
   return (
     <a 
       href={platform === 'email' ? `mailto:${url}` : url}
@@ -84,10 +98,10 @@ const SocialLink: React.FC<SocialLinkProps> = ({
       onClick={handleClick}
       className={cn(
         "group flex items-center gap-4 p-4 rounded-2xl",
-        "bg-white/80 dark:bg-[#222]/90 backdrop-blur-sm",
-        "border border-gray-200 dark:border-gray-800",
-        "hover:shadow-md hover:scale-[1.02] hover:bg-gradient-to-r hover:from-white hover:to-bio-light/60",
-        "dark:hover:from-[#222] dark:hover:to-[#333]/80",
+        "bg-white/20 dark:bg-[#222]/60 backdrop-blur-sm",
+        "border border-white/20 dark:border-gray-800/80",
+        "hover:shadow-md hover:scale-[1.02] hover:bg-gradient-to-r",
+        getPlatformColorClass(),
         "transition-all duration-300 ease-out cursor-pointer",
         "animate-slide-up", delay,
         className
@@ -98,10 +112,10 @@ const SocialLink: React.FC<SocialLinkProps> = ({
       </div>
       
       <div className="flex flex-col">
-        <span className="text-sm text-gray-500 dark:text-gray-400">
+        <span className="text-sm text-gray-600 dark:text-gray-400">
           {getPlatformName(platform)}
         </span>
-        <span className="font-medium group-hover:text-bio-accent transition-colors duration-300">
+        <span className="font-medium group-hover:text-white dark:group-hover:text-white transition-colors duration-300">
           {displayLabel}
         </span>
       </div>

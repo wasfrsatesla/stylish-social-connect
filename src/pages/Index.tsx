@@ -28,6 +28,16 @@ const Index: React.FC = () => {
           profileImage="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1000&auto=format&fit=crop"
           socialLinks={[
             {
+              platform: 'whatsapp',
+              url: 'https://wa.me/971501234567',
+              label: '+971 50 123 4567'
+            },
+            {
+              platform: 'telegram',
+              url: 'https://t.me/username',
+              label: '@username'
+            },
+            {
               platform: 'instagram',
               url: 'https://instagram.com/username',
               label: '@username'

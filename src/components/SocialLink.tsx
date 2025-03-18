@@ -3,13 +3,15 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { 
   Instagram, Facebook, Twitter, Linkedin, Globe, Mail, 
-  Github, Youtube, Music, Twitch, ExternalLink, MapPin
+  Github, Youtube, Music, Twitch, ExternalLink, MapPin,
+  MessageSquare, Send
 } from 'lucide-react';
 
 export type SocialPlatform = 
   'instagram' | 'facebook' | 'twitter' | 'linkedin' | 
   'website' | 'email' | 'github' | 'youtube' | 
-  'music' | 'twitch' | 'other' | 'location';
+  'music' | 'twitch' | 'other' | 'location' |
+  'whatsapp' | 'telegram';
 
 interface SocialLinkProps {
   platform: SocialPlatform;
@@ -32,6 +34,8 @@ const getIcon = (platform: SocialPlatform) => {
     case 'music': return <Music className="h-5 w-5" />;
     case 'twitch': return <Twitch className="h-5 w-5" />;
     case 'location': return <MapPin className="h-5 w-5" />;
+    case 'whatsapp': return <MessageSquare className="h-5 w-5" />;
+    case 'telegram': return <Send className="h-5 w-5" />;
     default: return <ExternalLink className="h-5 w-5" />;
   }
 };
@@ -49,6 +53,8 @@ const getPlatformName = (platform: SocialPlatform): string => {
     case 'music': return 'Music';
     case 'twitch': return 'Twitch';
     case 'location': return 'Location';
+    case 'whatsapp': return 'WhatsApp';
+    case 'telegram': return 'Telegram';
     default: return 'Link';
   }
 };

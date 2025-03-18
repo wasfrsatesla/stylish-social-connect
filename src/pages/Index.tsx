@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+
+    import React, { useEffect, useState } from 'react';
+import BioLink from '@/components/BioLink';
 
 const Index: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -19,32 +21,38 @@ const Index: React.FC = () => {
       
       <div className={`flex flex-col items-center justify-center w-full max-w-5xl transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         {/* بايو لينك */}
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-white mb-4">مرحبًا بك في موقعي!</h1>
-          <p className="text-white mb-4">تواصل معي عبر الروابط أدناه:</p>
-
-          <div className="flex space-x-6 justify-center mb-8">
-            <a href="https://wa.me/9647746883161" target="_blank" rel="noopener noreferrer" className="text-white">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Whatsapp_Logo_2022.png/800px-Whatsapp_Logo_2022.png" alt="WhatsApp" className="w-10 h-10 rounded-full shadow-lg" />
-            </a>
-            <a href="https://t.me/S5_d2" target="_blank" rel="noopener noreferrer" className="text-white">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Telegram_logo_2022.svg/800px-Telegram_logo_2022.svg.png" alt="Telegram" className="w-10 h-10 rounded-full shadow-lg" />
-            </a>
-            <a href="https://instagram.com/sd.5o" target="_blank" rel="noopener noreferrer" className="text-white">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" className="w-10 h-10 rounded-full shadow-lg" />
-            </a>
-            <a href="https://tellonym.me/sd.5o/risky" target="_blank" rel="noopener noreferrer" className="text-white">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Tellonym_logo.svg/1200px-Tellonym_logo.svg.png" alt="Tellonym" className="w-10 h-10 rounded-full shadow-lg" />
-            </a>
-          </div>
-        </div>
+        <BioLink
+          name="Sajid Majid"
+          title="طالب هندسة نفط"
+          bio="صبرًا فما نيل المُنى سهل المُراد."
+          profileImage="https://d.top4top.io/p_3364fzsln1.jpg"
+          videoUrl="https://www.youtube.com/embed/yIqZaMhwIh4?si=qo5bEkXML7QIVMIR"
+          socialLinks={[
+            {
+              platform: 'whatsapp',
+              url: 'https://wa.me/9647746883161',
+              label: '+9647746883161'
+            },
+            {
+              platform: 'telegram',
+              url: 'https://t.me/S5_d2',
+              label: '@S5_d2'
+            },
+            {
+              platform: 'instagram',
+              url: 'https://instagram.com/sd.5o',
+              label: '@sd.5o'
+            },
+            {
+              platform: 'tellonym',
+              url: 'https://tellonym.me/sd.5o/risky',
+              label: '@sd.5o'
+            },
+          ]}
+        />
       </div>
     </div>
   );
-};
-
-export default Index;
-
 };
 
 export default Index;

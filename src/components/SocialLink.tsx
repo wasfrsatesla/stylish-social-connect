@@ -19,6 +19,7 @@ interface SocialLinkProps {
   label?: string;
   className?: string;
   index?: number;
+  iconOnly?: boolean;
 }
 
 const getIcon = (platform: SocialPlatform) => {
@@ -66,7 +67,8 @@ const SocialLink: React.FC<SocialLinkProps> = ({
   url, 
   label, 
   className,
-  index = 0
+  index = 0,
+  iconOnly = false
 }) => {
   const displayLabel = label || getPlatformName(platform);
   const delay = `animate-delay-${(index % 5) * 100}`;
@@ -78,21 +80,50 @@ const SocialLink: React.FC<SocialLinkProps> = ({
     }
   };
 
-  // Custom color classes based on platform
+  // Get platform-specific styling
   const getPlatformColorClass = () => {
     switch (platform) {
-      case 'instagram': return 'hover:from-pink-500 hover:to-purple-500';
-      case 'facebook': return 'hover:from-blue-600 hover:to-blue-700';
-      case 'twitter': return 'hover:from-blue-400 hover:to-blue-500';
-      case 'x': return 'hover:from-gray-800 hover:to-gray-900';
-      case 'whatsapp': return 'hover:from-green-400 hover:to-green-600';
-      case 'telegram': return 'hover:from-blue-300 hover:to-blue-500';
-      case 'linkedin': return 'hover:from-blue-700 hover:to-blue-800';
-      case 'youtube': return 'hover:from-red-500 hover:to-red-700';
-      default: return 'hover:from-green-500 hover:to-emerald-600';
+      case 'instagram': return 'bg-gradient-to-br from-purple-500 to-pink-500';
+      case 'facebook': return 'bg-blue-600';
+      case 'twitter': return 'bg-blue-400';
+      case 'x': return 'bg-black';
+      case 'whatsapp': return 'bg-green-500';
+      case 'telegram': return 'bg-blue-500';
+      case 'linkedin': return 'bg-blue-700';
+      case 'youtube': return 'bg-red-600';
+      case 'location': return 'bg-blue-500';
+      case 'email': return 'bg-gray-600';
+      case 'website': return 'bg-green-600';
+      case 'github': return 'bg-gray-800';
+      case 'music': return 'bg-pink-600';
+      case 'twitch': return 'bg-purple-600';
+      default: return 'bg-green-600';
     }
   };
 
+  // For icon-only mode
+  if (iconOnly) {
+    return (
+      <a 
+        href={platform === 'email' ? `mailto:${url}` : url}
+        target={platform === 'email' ? '_self' : '_blank'} 
+        rel="noopener noreferrer"
+        onClick={handleClick}
+        title={displayLabel}
+        className={cn(
+          "flex items-center justify-center rounded-full w-14 h-14 shadow-md",
+          getPlatformColorClass(),
+          "text-white hover:scale-110 transition-all duration-300 ease-out",
+          "animate-slide-up", delay,
+          className
+        )}
+      >
+        {getIcon(platform)}
+      </a>
+    );
+  }
+
+  // Default for non-icon-only mode
   return (
     <a 
       href={platform === 'email' ? `mailto:${url}` : url}
@@ -104,7 +135,6 @@ const SocialLink: React.FC<SocialLinkProps> = ({
         "bg-white/20 dark:bg-[#222]/60 backdrop-blur-sm",
         "border border-white/20 dark:border-gray-800/80",
         "hover:shadow-md hover:scale-[1.02] hover:bg-gradient-to-r",
-        getPlatformColorClass(),
         "transition-all duration-300 ease-out cursor-pointer",
         "animate-slide-up", delay,
         className

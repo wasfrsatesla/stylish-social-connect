@@ -40,8 +40,8 @@ const Index: React.FC = () => {
             },
             {
               platform: 'instagram',
-              url: 'https://instagram.com/username',
-              label: '@username'
+              url: 'https://instagram.com/dxet1',
+              label: '@dxet1'
             },
             {
               platform: 'x',

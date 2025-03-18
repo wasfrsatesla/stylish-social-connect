@@ -1,10 +1,8 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
 import ProfileImage from './ProfileImage';
 import SocialLink, { SocialPlatform } from './SocialLink';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 interface SocialLink {
   platform: SocialPlatform;
@@ -32,24 +30,6 @@ const BioLink: React.FC<BioLinkProps> = ({
   videoUrl,
   className
 }) => {
-  // State to control link visibility
-  const [showAllLinks, setShowAllLinks] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<'all' | 'social' | 'video'>('all');
-  
-  // Filter links based on visibility and category
-  const filteredLinks = socialLinks.filter(link => {
-    if (activeCategory === 'all') return true;
-    if (activeCategory === 'social' && !link.hidden) return true;
-    if (activeCategory === 'video' && link.platform === 'youtube') return true;
-    return false;
-  });
-  
-  const visibleLinks = showAllLinks ? filteredLinks : filteredLinks.slice(0, 4);
-  
-  const toggleLinks = () => {
-    setShowAllLinks(!showAllLinks);
-  };
-  
   return (
     <div className={cn("flex flex-col items-center w-full p-4", className)}>
       <div className="bio-link p-8 flex flex-col items-center animate-scale-in">
@@ -72,17 +52,8 @@ const BioLink: React.FC<BioLinkProps> = ({
           )}
         </div>
         
-        {/* Category Toggle */}
-        <div className="mb-6 w-full max-w-sm">
-          <ToggleGroup type="single" defaultValue="all" onValueChange={(value) => setActiveCategory(value as 'all' | 'social' | 'video')}>
-            <ToggleGroupItem value="all" className="w-1/3">كل الروابط</ToggleGroupItem>
-            <ToggleGroupItem value="social" className="w-1/3">التواصل</ToggleGroupItem>
-            <ToggleGroupItem value="video" className="w-1/3">فيديو</ToggleGroupItem>
-          </ToggleGroup>
-        </div>
-        
-        {/* Video preview if available and video category selected */}
-        {videoUrl && (activeCategory === 'all' || activeCategory === 'video') && (
+        {/* Video preview if available */}
+        {videoUrl && (
           <div className="w-full mb-6 rounded-2xl overflow-hidden shadow-lg">
             <iframe 
               src={videoUrl} 
@@ -93,32 +64,21 @@ const BioLink: React.FC<BioLinkProps> = ({
           </div>
         )}
         
-        <div className="w-full space-y-3">
-          {visibleLinks.map((link, index) => (
+        {/* Social Icons Grid */}
+        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-4 w-full max-w-lg my-6">
+          {socialLinks.map((link, index) => (
             <SocialLink
               key={`${link.platform}-${index}`}
               platform={link.platform}
               url={link.url}
-              label={link.label}
+              iconOnly={true}
               index={index}
             />
           ))}
-          
-          {filteredLinks.length > 4 && (
-            <button 
-              onClick={toggleLinks}
-              className="w-full flex items-center justify-center gap-2 p-3 mt-4 rounded-2xl
-                bg-green-600/20 backdrop-blur-sm text-green-800 dark:text-green-300
-                hover:bg-green-700/30 transition-all duration-300 border border-green-400/30"
-            >
-              <span>{showAllLinks ? 'إخفاء' : 'إظهار المزيد'}</span>
-              {showAllLinks ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-            </button>
-          )}
         </div>
         
         <div className="mt-10 text-xs text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} · {name} · تم التطوير بواسطة Lovable
+          © {new Date().getFullYear()} · تم التطوير بواسطة Lovable
         </div>
       </div>
     </div>

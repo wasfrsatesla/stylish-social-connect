@@ -22,9 +22,9 @@ const Index: React.FC = () => {
       <div className={`flex flex-col items-center justify-center w-full max-w-5xl transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         {/* بايو لينك */}
         <BioLink
-          name="محمد أحمد"
-          title="مطور ومصمم مواقع"
-          bio="مرحبًا! أنا مطور ومصمم مواقع إلكترونية. أساعد الشركات على بناء تواجد رقمي رائع."
+          name="Sajid Majid"
+          title="طالب هندسة نفط"
+          bio="صبرًا فما نيل المُنى سهل المُراد."
           profileImage="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1000&auto=format&fit=crop"
           videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
           socialLinks={[

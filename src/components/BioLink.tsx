@@ -78,7 +78,7 @@ const BioLink: React.FC<BioLinkProps> = ({
         </div>
         
         <div className="mt-10 text-xs text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} · تم التطوير بواسطة Lovable
+          © {new Date().getFullYear()} · تم التطوير بواسطة ALIHAIDERSHAKER
         </div>
       </div>
     </div>

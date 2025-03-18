@@ -25,7 +25,7 @@ const Index: React.FC = () => {
           name="Sajid Majid"
           title="طالب هندسة نفط"
           bio="صبرًا فما نيل المُنى سهل المُراد."
-          profileImage="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1000&auto=format&fit=crop"
+          profileImage="https://d.top4top.io/p_3364fzsln1.jpg"
           videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
           socialLinks={[
             {
@@ -53,26 +53,7 @@ const Index: React.FC = () => {
               url: 'https://linkedin.com/in/username',
               label: 'محمد أحمد'
             },
-            {
-              platform: 'website',
-              url: 'https://example.com',
-              label: 'الموقع الشخصي'
-            },
-            {
-              platform: 'youtube',
-              url: 'https://youtube.com/watch?v=dQw4w9WgXcQ',
-              label: 'شاهد الفيديو'
-            },
-            {
-              platform: 'email',
-              url: 'contact@example.com',
-              label: 'تواصل معي'
-            },
-            {
-              platform: 'location',
-              url: 'https://maps.google.com/?q=Dubai',
-              label: 'دبي، الإمارات العربية المتحدة'
-            }
+          
           ]}
         />
       </div>

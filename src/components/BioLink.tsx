@@ -42,12 +42,12 @@ const BioLink: React.FC<BioLinkProps> = ({
         </div>
         
         <div className="text-center mb-8 animate-fade-in">
-          <h1 className="text-3xl md:text-4xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent hover:from-purple-500 hover:to-blue-400 transition-all duration-1000 animate-pulse-subtle">{name}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-1 name-gradient animate-pulse-subtle">{name}</h1>
           {title && (
-            <h2 className="text-gray-400 text-lg mb-4 hover:text-gray-300 transition-colors duration-300">{title}</h2>
+            <h2 className="text-light-primary dark:text-gray-400 text-lg mb-4 transition-colors duration-300">{title}</h2>
           )}
           {bio && (
-            <p className="text-gray-500 max-w-md mx-auto leading-relaxed hover:text-gray-400 transition-colors duration-300 cursor-default">
+            <p className="text-light-primary dark:text-gray-500 max-w-md mx-auto leading-relaxed transition-colors duration-300 cursor-default hover:scale-105 transform transition-transform">
               {bio}
             </p>
           )}
@@ -55,7 +55,7 @@ const BioLink: React.FC<BioLinkProps> = ({
         
         {/* Video preview if available */}
         {videoUrl && (
-          <div className="w-full mb-8 rounded-xl overflow-hidden border border-gray-800 animate-fade-in animate-delay-200 hover:shadow-lg hover:shadow-purple-900/20 transition-all duration-500">
+          <div className="w-full mb-8 rounded-xl overflow-hidden border light-theme:border-gray-200 dark:border-gray-800 animate-fade-in animate-delay-200 hover:shadow-lg transition-all duration-500">
             <iframe 
               src={videoUrl} 
               className="w-full aspect-video rounded-xl"
@@ -78,7 +78,7 @@ const BioLink: React.FC<BioLinkProps> = ({
           ))}
         </div>
         
-        <div className="mt-8 text-xs text-gray-600 hover:text-gray-500 transition-colors duration-300">
+        <div className="mt-8 text-xs light-theme:text-gray-600 dark:text-gray-600 hover:text-light-primary dark:hover:text-gray-500 transition-colors duration-300">
           © {new Date().getFullYear()} · Developed by Lovable
         </div>
       </div>

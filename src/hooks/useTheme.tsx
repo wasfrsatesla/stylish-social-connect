@@ -21,17 +21,25 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const savedTheme = localStorage.getItem('theme') as ThemeType;
     if (savedTheme) {
       setTheme(savedTheme);
-      document.documentElement.classList.toggle('light-theme', savedTheme === 'light');
-      document.body.classList.toggle('light-theme', savedTheme === 'light');
+      updateThemeClass(savedTheme);
     }
   }, []);
+
+  const updateThemeClass = (newTheme: ThemeType) => {
+    if (newTheme === 'light') {
+      document.documentElement.classList.add('light-theme');
+      document.body.classList.add('light-theme');
+    } else {
+      document.documentElement.classList.remove('light-theme');
+      document.body.classList.remove('light-theme');
+    }
+  };
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('light-theme', newTheme === 'light');
-    document.body.classList.toggle('light-theme', newTheme === 'light');
+    updateThemeClass(newTheme);
   };
 
   return (

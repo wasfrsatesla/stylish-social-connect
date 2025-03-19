@@ -79,7 +79,7 @@ const BioLink: React.FC<BioLinkProps> = ({
         </div>
         
         <div className="mt-8 text-xs light-theme:text-gray-600 dark:text-gray-600 hover:text-light-primary dark:hover:text-gray-500 transition-colors duration-300">
-          © {new Date().getFullYear()} · Developed by Lovable
+           {new Date().getFullYear()} 
         </div>
       </div>
     </div>

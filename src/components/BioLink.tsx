@@ -55,7 +55,7 @@ const BioLink: React.FC<BioLinkProps> = ({
         
         {/* Video preview if available */}
         {videoUrl && (
-          <div className="w-full mb-8 rounded-xl overflow-hidden border border-gray-800">
+          <div className="w-full mb-8 rounded-xl overflow-hidden border border-gray-800 animate-fade-in animate-delay-200">
             <iframe 
               src={videoUrl} 
               className="w-full aspect-video rounded-xl"
@@ -65,8 +65,8 @@ const BioLink: React.FC<BioLinkProps> = ({
           </div>
         )}
         
-        {/* Social Icons Grid */}
-        <div className="grid grid-cols-4 gap-4 w-full max-w-xs mx-auto my-6">
+        {/* Social Icons Grid with platform names */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 w-full max-w-xs sm:max-w-md mx-auto my-6">
           {socialLinks.map((link, index) => (
             <SocialLink
               key={`${link.platform}-${index}`}

@@ -1,11 +1,8 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { 
-  Instagram, SendHorizontal, MessageSquare, Globe, Link2, Twitter
-} from 'lucide-react';
 
-export type SocialPlatform = 'whatsapp' | 'telegram' | 'instagram' | 'tellonym' | 'twitter';
+export type SocialPlatform = 'whatsapp' | 'telegram' | 'instagram' | 'tellonym';
 
 interface SocialLinkProps {
   platform: SocialPlatform;
@@ -22,19 +19,17 @@ const getPlatformName = (platform: SocialPlatform) => {
     case 'whatsapp': return 'WhatsApp';
     case 'telegram': return 'Telegram';
     case 'tellonym': return 'Tellonym';
-    case 'twitter': return 'Twitter';
     default: return 'Link';
   }
 };
 
 const getIcon = (platform: SocialPlatform) => {
   switch (platform) {
-    case 'instagram': return <Instagram className="h-5 w-5" />;
-    case 'whatsapp': return <MessageSquare className="h-5 w-5" />;
-    case 'telegram': return <SendHorizontal className="h-5 w-5" />;
-    case 'tellonym': return <Globe className="h-5 w-5" />;
-    case 'twitter': return <Twitter className="h-5 w-5" />;
-    default: return <Link2 className="h-5 w-5" />;
+    case 'instagram': return '/instagram.svg';
+    case 'whatsapp': return '/whatsapp.svg';
+    case 'telegram': return '/telegram.svg';
+    case 'tellonym': return '/tellonym.svg';
+    default: return '/link.svg';
   }
 };
 
@@ -65,7 +60,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({
           className
         )}
       >
-        {getIcon(platform)}
+        <img src={getIcon(platform)} alt={platformName} className="w-7 h-7" />
       </a>
       <span className={cn(
         "text-xs font-medium text-gray-400 light-theme:text-gray-600 animate-fade-in",

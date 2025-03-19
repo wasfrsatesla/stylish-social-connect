@@ -51,11 +51,6 @@ const Index: React.FC = () => {
               url: 'https://tellonym.me/sd.5o/risky',
               label: '@sd.5o'
             },
-            {
-              platform: 'twitter',
-              url: 'https://twitter.com/sd_5o',
-              label: '@sd_5o'
-            },
           ]}
         />
       </div>

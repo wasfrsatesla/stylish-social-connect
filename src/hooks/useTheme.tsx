@@ -22,6 +22,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.classList.toggle('light-theme', savedTheme === 'light');
+      document.body.classList.toggle('light-theme', savedTheme === 'light');
     }
   }, []);
 
@@ -30,6 +31,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.classList.toggle('light-theme', newTheme === 'light');
+    document.body.classList.toggle('light-theme', newTheme === 'light');
   };
 
   return (

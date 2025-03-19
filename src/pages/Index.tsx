@@ -1,12 +1,11 @@
 
-    import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BioLink from '@/components/BioLink';
 
 const Index: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // تأثير حركي بسيط عند تحميل الصفحة
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 300);
@@ -15,12 +14,12 @@ const Index: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-900 dark:to-green-950 p-4 transition-opacity duration-700 ease-in-out">
-      {/* خلفية محببة دقيقة */}
-      <div className="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iLjAyIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-30 dark:opacity-10" />
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#121212] dark:bg-[#121212] p-4 transition-opacity duration-700 ease-in-out">
+      {/* Subtle noise texture overlay */}
+      <div className="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjAzIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
       
-      <div className={`flex flex-col items-center justify-center w-full max-w-5xl transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-        {/* بايو لينك */}
+      <div className={`flex flex-col items-center justify-center w-full max-w-3xl transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        {/* BioLink component */}
         <BioLink
           name="Sajid Majid"
           title="طالب هندسة نفط"

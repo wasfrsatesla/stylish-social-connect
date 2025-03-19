@@ -25,7 +25,7 @@ const Index: React.FC = () => {
       <div className={`flex flex-col items-center justify-center w-full max-w-3xl transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         {/* BioLink component */}
         <BioLink
-          name="Sajid Majid"
+          name="sajad Majid"
           title="طالب هندسة نفط"
           bio="صبرًا فما نيل المُنى سهل المُراد."
           profileImage="https://d.top4top.io/p_3364fzsln1.jpg"

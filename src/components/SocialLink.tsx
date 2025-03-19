@@ -2,7 +2,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { 
-  Instagram, Send, MessageSquare, Globe, Link2 
+  Instagram, SendHorizontal, MessageSquare, Globe, Link2
 } from 'lucide-react';
 
 export type SocialPlatform = 'whatsapp' | 'telegram' | 'instagram' | 'tellonym';
@@ -20,7 +20,7 @@ const getIcon = (platform: SocialPlatform) => {
   switch (platform) {
     case 'instagram': return <Instagram className="h-5 w-5" />;
     case 'whatsapp': return <MessageSquare className="h-5 w-5" />;
-    case 'telegram': return <Send className="h-5 w-5" />;
+    case 'telegram': return <SendHorizontal className="h-5 w-5" />;
     case 'tellonym': return <Globe className="h-5 w-5" />;
     default: return <Link2 className="h-5 w-5" />;
   }
@@ -44,7 +44,8 @@ const SocialLink: React.FC<SocialLinkProps> = ({
       className={cn(
         "flex items-center justify-center rounded-full w-12 h-12 sm:w-14 sm:h-14",
         "bg-gray-900 text-white hover:scale-110 hover:bg-gray-800",
-        "shadow-lg shadow-black/20 border border-gray-800",
+        "light-theme:bg-gray-100 light-theme:text-gray-900 light-theme:hover:bg-gray-200",
+        "shadow-lg shadow-black/20 light-theme:shadow-gray-300/30 border border-gray-800 light-theme:border-gray-200",
         "transition-all duration-300 ease-out",
         "animate-fade-in", delay,
         className

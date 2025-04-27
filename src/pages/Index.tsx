@@ -28,7 +28,7 @@ const Index: React.FC = () => {
           name="sajad Majid"
           title="طالب هندسة نفط"
           bio="صبرًا فما نيل المُنى سهل المُراد."
-          profileImage="https://d.top4top.io/p_3364fzsln1.jpg"
+          profileImage="https://a.top4top.io/p_3404bi9cn1.jpg"
           videoUrl="https://www.youtube.com/embed/yIqZaMhwIh4?si=qo5bEkXML7QIVMIR"
           socialLinks={[
             {
@@ -38,7 +38,7 @@ const Index: React.FC = () => {
             },
             {
               platform: 'telegram',
-              url: 'https://t.me/S5_d2',
+              url: 'https://t.me/S_5_Sd',
               label: '@S5_d2'
             },
             {

@@ -38,8 +38,8 @@ const Index: React.FC = () => {
             },
             {
               platform: 'telegram',
-              url: 'https://t.me/S_5_Sd',
-              label: '@S5_d2'
+              url: 'https://t.me/C_2_0c',
+              label: '@C_2_0c'
             },
             {
               platform: 'instagram',
